@@ -8,7 +8,7 @@ document.addEventListener("turbolinks:load", () => {
     { channel: "RoomChannel", room_id: room_id },
     {
       connected() {
-        console.log("connected to room channel" + room_id);
+        console.log("connected to room channel " + room_id);
       },
 
       disconnected() {
