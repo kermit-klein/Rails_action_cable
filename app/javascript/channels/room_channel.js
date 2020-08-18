@@ -1,11 +1,14 @@
 import consumer from "./consumer";
 
 document.addEventListener("turbolinks:load", () => {
+  const element = document.getElementById("room-id");
+  const room_id = element.getAttribute("data-room-id");
+
   consumer.subscriptions.create(
-    { channel: "RoomChannel", room_id: 1 },
+    { channel: "RoomChannel", room_id: room_id },
     {
       connected() {
-        console.log("connected to room channel");
+        console.log("connected to room channel" + room_id);
       },
 
       disconnected() {
